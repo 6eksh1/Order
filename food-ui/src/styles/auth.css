@@ -28,6 +28,7 @@
   text-align: center;
   margin-bottom: 25px;
   color: #333;
+  font-size: 22px;
 }
 
 /* ===============================
@@ -48,6 +49,7 @@
   font-size: 14px;
   outline: none;
   transition: 0.3s;
+  width: 100%;
 }
 
 .auth-form input:focus,
@@ -69,15 +71,12 @@
   font-size: 15px;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
 }
 
 .auth-btn:hover {
   background: #e67300;
 }
-
-/* ===============================
-   PROFILE PAGE
-================================= */
 
 /* ================= PROFILE PAGE ================= */
 
@@ -106,10 +105,6 @@
   transition: 0.3s;
 }
 
-.profile-card:hover {
-  transform: translateY(-5px);
-}
-
 .profile-avatar {
   width: 90px;
   height: 90px;
@@ -128,7 +123,6 @@
 .profile-card h3 {
   margin: 10px 0 5px;
   font-size: 18px;
-  color: #222;
 }
 
 .profile-card p {
@@ -150,11 +144,6 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-}
-
-.profile-section:hover {
-  transform: translateY(-3px);
 }
 
 .profile-section h4 {
@@ -174,7 +163,6 @@
 .profile-section ul li {
   padding: 8px 0;
   font-size: 14px;
-  color: #444;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -184,29 +172,15 @@
   padding-left: 6px;
 }
 
-/* ================= LOGOUT STYLE ================= */
-
 .profile-section ul li:last-child {
   color: red;
   font-weight: 500;
-}
-
-/* ================= ERROR MESSAGE ================= */
-
-.error-text {
-  color: red;
-  font-size: 13px;
-  margin-top: -8px;
 }
 
 /* ================= PASSWORD FIELD ================= */
 
 .password-field {
   position: relative;
-  width: 100%;
-}
-
-.password-field input {
   width: 100%;
 }
 
@@ -219,9 +193,28 @@
   font-size: 18px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= ERROR MESSAGE ================= */
 
-@media (max-width: 900px) {
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: -8px;
+}
+
+/* ==========================================
+   RESPONSIVE BREAKPOINTS
+========================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .profile-wrapper {
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
   .profile-wrapper {
     grid-template-columns: 1fr;
   }
@@ -229,17 +222,53 @@
   .profile-card {
     margin-bottom: 20px;
   }
-}
-/* ===============================
-   RESPONSIVE
-================================= */
 
-@media (max-width: 900px) {
-  .profile-wrapper {
-    grid-template-columns: 1fr;
+  .profile-container {
+    padding: 40px 15px;
   }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
 
   .auth-card {
-    padding: 25px;
+    padding: 25px 18px;
+  }
+
+  .auth-card h2 {
+    font-size: 18px;
+  }
+
+  .auth-form input,
+  .auth-form select {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .auth-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+  }
+
+  .profile-card h3 {
+    font-size: 16px;
+  }
+
+  .profile-card p {
+    font-size: 13px;
+  }
+
+  .profile-section h4 {
+    font-size: 14px;
+  }
+
+  .profile-section ul li {
+    font-size: 13px;
   }
 }

@@ -1,9 +1,23 @@
 /* ======================================
+   GLOBAL
+====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+/* ======================================
    HERO SECTION
 ====================================== */
 
 .offer-hero {
-  height: 350px;
+  min-height: 380px;
   background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600")
     center/cover no-repeat;
   position: relative;
@@ -13,7 +27,7 @@
 }
 
 .offer-hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   width: 100%;
   height: 100%;
   color: white;
@@ -27,12 +41,13 @@
 
 .offer-hero-overlay h1 {
   font-size: 42px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .offer-hero-overlay p {
   font-size: 18px;
   opacity: 0.9;
+  max-width: 700px;
 }
 
 /* ======================================
@@ -41,7 +56,6 @@
 
 .offer-container {
   padding: 60px 8%;
-  background: #f9f9f9;
 }
 
 .section-title {
@@ -76,12 +90,12 @@
 
 .offer-card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 
 .offer-content {
-  padding: 18px;
+  padding: 20px;
 }
 
 .offer-content h3 {
@@ -116,7 +130,7 @@
 
 .info-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   background: white;
   padding: 40px;
@@ -187,22 +201,19 @@
   border: none;
   border-radius: 12px;
 }
+
+/* ======================================
+   REVIEWS SECTION
+====================================== */
+
 .reviews-section,
 .similar-section {
   padding: 60px 20px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 26px;
-  color: #333;
-}
-
-/* Review Grid */
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   max-width: 1200px;
   margin: auto;
@@ -245,10 +256,13 @@
   color: #555;
 }
 
-/* Similar Restaurants */
+/* ======================================
+   SIMILAR RESTAURANTS
+====================================== */
+
 .similar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1000px;
   margin: auto;
@@ -275,16 +289,70 @@
 }
 
 /* ======================================
-   RESPONSIVE
+   TABLET VIEW
 ====================================== */
+
 @media (max-width: 992px) {
+
   .offer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .info-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .similar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer-hero-overlay h1 {
+    font-size: 32px;
+  }
 }
 
+/* ======================================
+   MOBILE VIEW
+====================================== */
+
 @media (max-width: 600px) {
-  .offer-grid {
+
+  .offer-container {
+    padding: 40px 20px;
+  }
+
+  .offer-grid,
+  .info-card,
+  .review-grid,
+  .similar-grid {
     grid-template-columns: 1fr;
+  }
+
+  .offer-hero {
+    min-height: 280px;
+  }
+
+  .offer-hero-overlay h1 {
+    font-size: 24px;
+  }
+
+  .offer-hero-overlay p {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .offer-card img {
+    height: 180px;
+  }
+
+  .map-section iframe {
+    height: 250px;
   }
 }

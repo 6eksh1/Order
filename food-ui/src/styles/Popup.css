@@ -1,42 +1,61 @@
+/* ================= POPUP OVERLAY ================= */
+
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Prevent edge touching on mobile */
   z-index: 999;
+  overflow-y: auto;
 }
+
+/* ================= POPUP CARD ================= */
 
 .popup-card {
   background: #ffffff;
+  width: 100%;
+  max-width: 420px;
   padding: 30px;
-  border-radius: 12px;
-  width: 400px;
+  border-radius: 14px;
   text-align: center;
   position: relative;
-  animation: fadeIn 0.3s ease;
+  animation: popupFade 0.3s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .popup-card.large {
-  width: 500px;
+  max-width: 520px;
 }
 
 .popup-card h2 {
   margin-bottom: 15px;
+  font-size: 22px;
 }
+
+/* ================= INPUTS ================= */
 
 .popup-card input,
 .popup-card textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s;
 }
+
+.popup-card input:focus,
+.popup-card textarea:focus {
+  outline: none;
+  border-color: orange;
+  box-shadow: 0 0 0 2px rgba(255,165,0,0.2);
+}
+
+/* ================= BUTTONS ================= */
 
 .popup-card button {
   margin: 10px 5px;
@@ -44,28 +63,94 @@
   border: none;
   background: orange;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  transition: 0.2s;
 }
 
 .popup-card button:hover {
   background: darkorange;
 }
 
+/* ================= CLOSE BUTTON ================= */
+
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  background: red;
+  top: 12px;
+  right: 12px;
+  background: #ff4d4d;
   border: none;
   color: white;
-  padding: 5px 10px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.close-btn:hover {
+  background: #e60000;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .popup-card {
+    padding: 25px;
+  }
+
+  .popup-card.large {
+    max-width: 95%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .popup-overlay {
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .popup-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .popup-card h2 {
+    font-size: 18px;
+  }
+
+  .popup-card button {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+  }
 }
