@@ -14,3 +14,26 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Deploying to Vercel (avoid 404 on refresh)
+
+This app uses React Router with client-side routes. On Vercel, direct access to routes like `/login` or `/profile` can return 404 unless SPA rewrites are configured.
+
+### Required setup
+
+- Set the Vercel project **Root Directory** to `food-ui`
+- Keep this rewrite in [vercel.json](vercel.json):
+
+```json
+{
+	"rewrites": [
+		{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+	]
+}
+```
+
+### Why this works
+
+- Routes without file extensions are sent to `index.html`
+- Static files like `.js`, `.css`, images, and fonts are served normally
+- React Router handles page routing in the browser after `index.html` loads
