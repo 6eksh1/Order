@@ -748,10 +748,6 @@ const OrderPage = () => {
       <img src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png" alt="Burger Town" />
       <p>Burger Town</p>
     </div>
-        <div className="similar-card">
-      <img src="https://th.bing.com/th/id/OIP.2SA--bvLjLkRjrPJY8CDbAHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tandoori Express" />
-      <p>Tandoori Express</p>
-      </div>
 
   </div>
 </div>
