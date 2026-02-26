@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import DeliveryPopup from "../components/DeliveryPopup";
 import CustomizePopup from "../components/CustomizePopup";
-import "../styles/Order.css";
+import "../styles/order.css";
 
 const categories = [
   "Pizzas",
