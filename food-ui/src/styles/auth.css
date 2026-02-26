@@ -1,0 +1,245 @@
+/* ===============================
+   AUTH SECTION
+================================= */
+
+.auth-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff8800, #ffb347);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* ===============================
+   AUTH CARD
+================================= */
+
+.auth-card {
+  background: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* ===============================
+   FORM
+================================= */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #ff8800;
+  box-shadow: 0 0 5px rgba(255, 136, 0, 0.4);
+}
+
+/* ===============================
+   BUTTON
+================================= */
+
+.auth-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff8800;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #e67300;
+}
+
+/* ===============================
+   PROFILE PAGE
+================================= */
+
+/* ================= PROFILE PAGE ================= */
+
+.profile-container {
+  padding: 60px 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.profile-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+/* ================= PROFILE CARD ================= */
+
+.profile-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8800, #ff5500);
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.profile-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.profile-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+/* ================= RIGHT SIDE SECTIONS ================= */
+
+.profile-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.profile-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.profile-section:hover {
+  transform: translateY(-3px);
+}
+
+.profile-section h4 {
+  margin-bottom: 15px;
+  color: #ff8800;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
+.profile-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-section ul li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.profile-section ul li:hover {
+  color: #ff8800;
+  padding-left: 6px;
+}
+
+/* ================= LOGOUT STYLE ================= */
+
+.profile-section ul li:last-child {
+  color: red;
+  font-weight: 500;
+}
+
+/* ================= ERROR MESSAGE ================= */
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: -8px;
+}
+
+/* ================= PASSWORD FIELD ================= */
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .profile-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    margin-bottom: 20px;
+  }
+}
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .profile-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 25px;
+  }
+}
