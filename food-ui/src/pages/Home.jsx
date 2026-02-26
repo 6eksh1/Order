@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import DeliveryPopup from "../components/DeliveryPopup";
-import CustomizePopup from "../components/CustomizePopup";
 /* ================= NAVBAR ================= */
 
 const Navbar = () => {
